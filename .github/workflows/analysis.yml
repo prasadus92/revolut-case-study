@@ -33,5 +33,6 @@ jobs:
       - name: Execute notebook
         run: |
           python -m ipykernel install --user --name python3
-          jupyter nbconvert --to notebook --execute notebook.ipynb --output /dev/null
+          jupyter nbconvert --to notebook --execute notebook.ipynb --output notebook_check.ipynb
+          rm -f notebook_check.ipynb
           echo "Notebook executed successfully"
