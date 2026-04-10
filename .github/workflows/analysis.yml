@@ -7,6 +7,7 @@ on:
       - 'src/**'
       - 'notebook.ipynb'
       - 'requirements.txt'
+      - '.github/workflows/**'
   pull_request:
     branches: [main]
 
