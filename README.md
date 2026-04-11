@@ -38,6 +38,7 @@ Analysis of 196,187 user-level P&L records to identify what is driving the decli
 │   └── test_analysis.py        # Data validation tests
 ├── output/
 │   └── revolut_gp_analysis.pdf # Final deliverable (10-slide PDF)
+├── METHODOLOGY.md              # Analytical framework and approach
 ├── requirements.txt
 ├── package.json                # Node deps (puppeteer)
 └── .github/workflows/          # CI: tests + notebook execution

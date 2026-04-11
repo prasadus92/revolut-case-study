@@ -436,7 +436,7 @@ def s10():
       <strong>#10</strong> Simplified business onboarding \u2192 slide 7<br>
       <strong>#11</strong> New terminal for offline payments \u2192 slide 7<br>
       <strong>#12</strong> Money Market Funds: no material P&L impact yet<br>
-      <strong>#13</strong> Scale plan: 187 users, \u00a32,783 GP/user \u2192 slide 7<br>
+      <strong>#13</strong> Scale plan: 187 users, \u00a32,768 GP/user \u2192 slide 7<br>
       <strong>#14</strong> Faster refund settlement: UX, no P&L impact<br>
       <strong>#15</strong> Legal streamlining: 50% faster approvals<br>
       <strong>#16</strong> German provisions 5% to 10% \u2192 slide 7<br>

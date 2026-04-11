@@ -24,6 +24,7 @@ package-lock.json
 output/slides_v2/
 output/charts_final/
 output/slides.html
+test-screenshots/
 
 # Original brief (reviewer already has this)
 documentation.pdf
