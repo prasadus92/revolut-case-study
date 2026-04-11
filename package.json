@@ -1,27 +1,12 @@
 {
-  "name": "revolut",
+  "name": "revolut-gp-analysis",
   "version": "1.0.0",
-  "description": "Identify root causes of Gross Profit decline and provide actionable recommendations to increase GP L90D by £4M within 6–12 months.",
-  "main": "index.js",
+  "private": true,
+  "description": "GP L90D root cause analysis and path to £4M improvement",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pdf": "node src/render_pdf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prasadus92/revolut-eir-case-study.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/prasadus92/revolut-eir-case-study/issues"
-  },
-  "homepage": "https://github.com/prasadus92/revolut-eir-case-study#readme",
   "dependencies": {
-    "@slidev/cli": "^52.14.2",
-    "@slidev/theme-default": "^0.25.0",
-    "playwright-chromium": "^1.59.1",
     "puppeteer": "^24.40.0"
   }
 }

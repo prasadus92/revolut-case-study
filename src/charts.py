@@ -2,7 +2,7 @@
 Chart generation for the Revolut GP L90D presentation.
 
 All charts render at 300 DPI with consistent styling.
-Charts are saved as PNG and embedded into PPTX slides.
+Charts are saved as PNG and embedded into HTML slides via base64.
 """
 
 import numpy as np
