@@ -1,0 +1,52 @@
+name: Generate PDF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Node dependencies
+        run: npm install puppeteer
+
+      - name: Generate charts
+        run: |
+          cd src && python -c "
+          import sys; sys.path.insert(0, '.')
+          import pandas as pd
+          from charts import generate_all
+          from pathlib import Path
+          df = pd.read_csv('../dataset.csv')
+          if df.columns[0] == '' or df.columns[0].startswith('Unnamed'):
+              df = df.drop(columns=[df.columns[0]])
+          df['amount_gbp'] = pd.to_numeric(df['amount_gbp'], errors='coerce') * 1000
+          generate_all(df, Path('../output/charts_final'))
+          "
+
+      - name: Build HTML slides
+        run: python src/build_html.py
+
+      - name: Render PDF
+        run: node src/render_pdf.js
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: revolut-gp-analysis
+          path: output/revolut_gp_analysis.pdf
