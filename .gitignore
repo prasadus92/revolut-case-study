@@ -16,17 +16,14 @@ venv/
 .vscode/
 *.swp
 
-# Node / Next.js (internal tooling, not part of submission)
+# Node (puppeteer for PDF rendering)
 node_modules/
-deck/
-package.json
 package-lock.json
-slides/
+
+# Build artifacts
+output/slides_v2/
+output/charts_final/
+output/slides.html
 
 # Original brief (reviewer already has this)
 documentation.pdf
-
-# Build artifacts
-test-screenshots/
-output/slides.html
-output/slide-*.png
