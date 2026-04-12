@@ -6,6 +6,7 @@ Charts are saved as PNG and embedded into HTML slides via base64.
 """
 
 import numpy as np
+import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -15,6 +16,22 @@ from design import (
     WHITE, TEXT_PRIMARY, TEXT_SECONDARY, TEXT_TERTIARY, BORDER,
     C_BLUE, C_BLUE2, C_BLUE3, C_RED, C_RED2, C_GREEN,
 )
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def load_data():
+    """Load and preprocess the dataset.
+
+    Returns a DataFrame with amount_gbp converted from £1,000s (as stored
+    in the CSV per documentation) to actual pounds, ready for chart generation
+    and testing.
+    """
+    df = pd.read_csv(ROOT / "dataset.csv")
+    if df.columns[0] == "" or df.columns[0].startswith("Unnamed"):
+        df = df.drop(columns=[df.columns[0]])
+    df["amount_gbp"] = pd.to_numeric(df["amount_gbp"], errors="coerce") * 1_000
+    return df
 
 # ─────────────────────────────────────────────────────────────────────────
 # MATPLOTLIB DEFAULTS

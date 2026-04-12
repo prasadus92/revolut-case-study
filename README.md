@@ -6,7 +6,7 @@ Analysis of 196,187 user-level P&L records to identify what is driving the decli
 
 1. **GP L90D is £7.67M and declining.** Monthly GP fell from £2.72M (May) to £2.31M (Jul), with the decline accelerating: £77K in June, £326K in July.
 
-2. **The vending machine campaign is the largest cost lever.** Initiative 6 cost £2.6M per L90D. Non-activated users (6,455) drove 89% of that cost. Excluding rewards, they generate £115 GP/user vs £57 from activated users. The reward structure creates the loss, not the users.
+2. **The vending machine campaign is the largest cost lever.** Initiative 6 cost £2.6M per L90D. Non-activated users drove 76% of that cost. Excluding rewards, they generate £115 GP/user vs £57 from activated users. The reward structure creates the loss, not the users.
 
 3. **Card vendor migration is delivering real savings.** Processing costs fell £331K between May and July, with the transition still incomplete. Card production costs moved in the wrong direction (+£38K/month from Initiative 9).
 
@@ -14,7 +14,7 @@ Analysis of 196,187 user-level P&L records to identify what is driving the decli
 
 5. **FX spread collapsed 57%** (£398K to £173K), the steepest structural revenue decline. Romania FX dropped 61%, possibly linked to Initiative 5. Interest income fell £373K, partly driven by Initiative 2 increasing savings rates.
 
-6. **Eight interventions total £1.5M to £2.8M.** Supplementary plays (business growth, geographic ARPU, balance optimisation) close the gap to £4M.
+6. **Eight interventions total £1.5M to £2.9M.** Supplementary plays (business growth, geographic ARPU, balance optimisation) close the gap to £4M.
 
 ## Methodology
 
