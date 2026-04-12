@@ -192,7 +192,7 @@ def s02():
     return S(2, f"""
 <div class="tag">Root cause analysis</div>
 <h1>GP fell \u00a3403K in three months, with the decline accelerating in July</h1>
-<div class="sub">Interest income (\u2212\u00a3373K) and FX revenue (\u2212\u00a3317K) drove 83% of the drop. Card cost savings (+\u00a3122K) and lifestyle growth (+\u00a3181K) partially offset.</div>
+<div class="sub">Interest income (\u2212\u00a3373K) and FX revenue (\u2212\u00a3317K) are the two largest decliners, totalling \u00a3690K in gross decline. Card cost savings (+\u00a3122K) and lifestyle growth (+\u00a3181K) partially offset.</div>
 <div class="chart fill mt"><img src="{img('waterfall.png')}" style="width:100%;"></div>
 """, "Monthly GP by account_level_2. Categories below \u00a310K excluded.")
 
@@ -249,7 +249,7 @@ def s04():
     </div>
     <div class="card gray">
       <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--text3)')} Subscriptions: down \u00a3129K</div>
-      <div class="card-b">Plan Fees fell \u00a3774K to \u00a3671K. Monitor against Initiative 7 benefit costs.</div>
+      <div class="card-b">Plan Fees fell \u00a3774K to \u00a3671K, but recovered from a \u00a3606K June trough. Initiative 7 benefits may be driving re-engagement.</div>
     </div>
   </div>
 </div>
@@ -328,7 +328,7 @@ def s07():
 <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:18px 22px;margin-top:14px;align-content:center;flex:1;padding-bottom:60px;">
   <div class="card action" style="padding:16px 18px;">
     <div class="card-h">{ICO_DOLLAR} Credit repricing: <span class="hl">\u00a345K\u2013\u00a370K</span></div>
-    <div class="card-b">Loan declines: Poland <span class="neg">\u2212\u00a320K/mo</span>, Romania <span class="neg">\u2212\u00a313K/mo</span>, Lithuania <span class="neg">\u2212\u00a311K/mo</span>, Ireland <span class="neg">\u2212\u00a310K/mo</span>, Germany <span class="neg">\u2212\u00a36K/mo</span> (Init. 16). Credit Cards and BNPL partially offset.</div>
+    <div class="card-b">Loan declines: Poland <span class="neg">\u2212\u00a320K/mo</span>, Romania <span class="neg">\u2212\u00a313K/mo</span>, Lithuania <span class="neg">\u2212\u00a311K/mo</span>, Ireland <span class="neg">\u2212\u00a310K/mo</span>, Germany <span class="neg">\u2212\u00a36K/mo</span> (Init. 16). Partially offset: Credit Cards turned positive (<span class="pos">+\u00a313K</span> in Jul) and BNPL grew 6.6x.</div>
   </div>
   <div class="card action" style="padding:16px 18px;">
     <div class="card-h">{ICO_DOLLAR} Bank payment pricing: <span class="hl">\u00a390K\u2013\u00a3180K</span></div>
@@ -336,7 +336,7 @@ def s07():
   </div>
   <div class="card gray" style="padding:16px 18px;">
     <div class="card-h">{ICO_TOOL} SMS and operational: ~\u00a322K per L90D</div>
-    <div class="card-b">In-house SMS cut costs <span class="pos">\u221260%</span>. Legal streamlining halved approval time. Faster refunds improve UX. These compound the value of other interventions.</div>
+    <div class="card-b">In-house SMS cut costs <span class="pos">\u221260%</span>. Legal streamlining halved approval time. Faster refunds improve UX. Youth segment (3,153 users) runs at <span class="neg">\u2212\u00a358/user</span>, but improving (May \u2212\u00a373K to Jul \u2212\u00a337K).</div>
   </div>
   <div class="card action green" style="padding:16px 18px;">
     <div class="card-h">{ICO_USERS} Business segment: <span class="pos">27x GP/user</span></div>
@@ -427,7 +427,7 @@ def s10():
     <div class="section-label">Initiative mapping</div>
     <div style="font-size:14px;line-height:1.65;color:var(--text2);">
       <strong>#1</strong> Credit rate cuts (RO, DE, LT): loan decline \u2192 slide 7<br>
-      <strong>#2</strong> Savings rate increase (Metal/Ultra): +\u00a321K \u2192 slide 4<br>
+      <strong>#2</strong> Savings rate increase (Metal/Ultra): Instant Access GP +\u00a334K despite higher rates (volume offset) \u2192 slide 4<br>
       <strong>#3</strong> eSIM launch: 8.5x growth \u2192 slide 6<br>
       <strong>#4</strong> Stays cashback reduction: \u00a315K first month \u2192 slide 6<br>
       <strong>#5</strong> Bank payment pricing (HUF/RON) \u2192 slides 4, 7<br>

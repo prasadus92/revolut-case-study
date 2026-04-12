@@ -10,18 +10,15 @@ import numpy as np
 from pathlib import Path
 import pytest
 
+from charts import load_data
+
 ROOT = Path(__file__).resolve().parent.parent
-DATA_PATH = ROOT / "dataset.csv"
 CHART_DIR = ROOT / "output" / "charts_final"
-SCALE = 1_000
 
 
 @pytest.fixture(scope="module")
 def df():
-    data = pd.read_csv(DATA_PATH)
-    if data.columns[0] == "" or data.columns[0].startswith("Unnamed"):
-        data = data.drop(columns=[data.columns[0]])
-    data["amount_gbp"] = pd.to_numeric(data["amount_gbp"], errors="coerce") * SCALE
+    data = load_data()
     data["pnl_date"] = pd.to_datetime(data["pnl_date"])
     return data
 

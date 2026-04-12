@@ -29,13 +29,9 @@ jobs:
         run: |
           cd src && python -c "
           import sys; sys.path.insert(0, '.')
-          import pandas as pd
-          from charts import generate_all
+          from charts import load_data, generate_all
           from pathlib import Path
-          df = pd.read_csv('../dataset.csv')
-          if df.columns[0] == '' or df.columns[0].startswith('Unnamed'):
-              df = df.drop(columns=[df.columns[0]])
-          df['amount_gbp'] = pd.to_numeric(df['amount_gbp'], errors='coerce') * 1000
+          df = load_data()
           generate_all(df, Path('../output/charts_final'))
           "
 
