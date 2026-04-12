@@ -12,7 +12,7 @@ GP L90D was broken down using the four-level account hierarchy (account_level_1 
 
 Each of the 17 recent initiatives was mapped to the P&L categories it affects. Where the data shows a material change in a category that an initiative targets, the change is attributed to that initiative. Where multiple factors could explain a change (e.g., FX spread decline could be competitive pressure or Initiative 5 pricing), this is noted explicitly.
 
-10 of 17 initiatives show measurable P&L impact in the dataset. The remaining 7 are either too early to measure, have no direct P&L line (e.g., UX improvements), or affect future periods.
+10 of 17 initiatives show measurable P&L impact in the dataset. The remaining 7 are either too early to measure, have no direct P&L line (e.g., UX improvements), or affect future periods. Loan declines were observed in five markets (Poland, Romania, Lithuania, Ireland, Germany); Initiative 1 explains three of these, while Poland and Ireland warrant separate investigation.
 
 ### 3. Size interventions
 
@@ -42,7 +42,9 @@ High-confidence, high-controllability levers (vending machine restructuring, car
 
 ## Data notes
 
-- 196,187 user-level P&L records across May, June, and July 2024
+- 196,187 user-level P&L records across April (partial), May, June, and July 2024
+- 191,412 unique users total; 178,937 in the May-Jul L90D analysis window
+- 2024 cohort users generate £14/user vs £49 for pre-2024 cohorts
 - amount_gbp is denominated in thousands as stated in the documentation
 - All figures derived exclusively from the provided dataset
 - NAP (New Active Person) status represents the final activation outcome during the 90-day window
