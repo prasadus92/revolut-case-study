@@ -165,14 +165,14 @@ def S(num, content, fn=""):
 def s01():
     return S(1, f"""
 <div class="tag">Executive summary</div>
-<h1>GP L90D declined \u00a3403K. Eight interventions size \u00a31.5M to \u00a32.8M in recovery.</h1>
+<h1>GP L90D declined \u00a3403K. Eight interventions size \u00a31.5M to \u00a32.9M in recovery.</h1>
 <div class="sub">Business growth, geographic ARPU, and balance optimisation close the remaining gap to \u00a34M.</div>
 
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;">
   <div class="stats stats-2x2" style="gap:24px;">
-    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">\u00a37.67M</div><div class="stat-label">GP L90D</div><div class="stat-detail">191,412 users, May to Jul 2024</div></div>
+    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">\u00a37.67M</div><div class="stat-label">GP L90D</div><div class="stat-detail">196,187 records across May\u2013Jul 2024</div></div>
     <div class="stat" style="border-top-color:var(--red)"><div class="stat-val" style="color:var(--red)">\u2212\u00a3403K</div><div class="stat-label">Three-month decline</div><div class="stat-detail">Accelerating: \u2212\u00a377K then \u2212\u00a3326K</div></div>
-    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">8</div><div class="stat-label">Interventions sized</div><div class="stat-detail">\u00a31.5M to \u00a32.8M from data</div></div>
+    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">8</div><div class="stat-label">Interventions sized</div><div class="stat-detail">\u00a31.5M to \u00a32.9M from data</div></div>
     <div class="stat" style="border-top-color:var(--blue)"><div class="stat-val" style="color:var(--blue)">\u00a34M</div><div class="stat-label">Target</div><div class="stat-detail">Achievable across three horizons</div></div>
   </div>
 
@@ -200,15 +200,15 @@ def s02():
 def s03():
     return S(3, f"""
 <div class="tag">Deep dive: largest cost lever</div>
-<h1>The vending machine campaign cost \u00a32.6M in 90 days. Non-activated users drove 89%.</h1>
-<div class="sub">The reward structure creates the loss. Without it, non-activated users generate more GP than activated ones.</div>
+<h1>The vending machine campaign cost \u00a32.6M in 90 days. 76% went to users who never activated.</h1>
+<div class="sub">Stripping the reward, each non-activated user generates \u00a3115 in GP vs \u00a357 for activated ones. The reward structure, not the user base, drives the cost.</div>
 
 <div class="row fill mt" style="gap:18px;">
   <div class="chart" style="flex:0 0 42%;"><img src="{img('nap.png')}" style="width:100%;"></div>
   <div class="col vc" style="flex:1;gap:18px;">
     <div class="card">
       <div class="card-h">{ICO_USERS} \u00a3115 GP/user without the reward vs \u00a357 with it</div>
-      <div class="card-b">Non-activated users are more profitable than activated ones when the vending machine reward is removed. The reward structure creates the loss, not the users themselves.</div>
+      <div class="card-b">Without the reward, non-activated users generate 2x the GP of activated ones. The cost sits in the reward structure and card dispatch process, not in user quality.</div>
     </div>
     <div class="card action">
       <div class="card-h">{ICO_TOOL} Qualification gate + spend cap</div>
@@ -229,8 +229,8 @@ def s03():
 def s04():
     return S(4, f"""
 <div class="tag">Deep dive: revenue declines</div>
-<h1>Three revenue lines fell \u00a3788K. FX spread and bank payments are most actionable.</h1>
-<div class="sub">Ordered by controllability: FX and bank payments can be addressed through pricing review. Interest income is largely external.</div>
+<h1>Four revenue lines fell \u00a3916K. FX spread and bank payments are most actionable.</h1>
+<div class="sub">Ordered by controllability: FX and bank payments respond to pricing review. Interest income is rate-driven. Subscriptions need monitoring.</div>
 
 <div class="row fill mt" style="gap:16px;">
   <div class="chart" style="flex:0 0 44%;" ><img src="{img('fx.png')}" style="width:100%;"></div>
@@ -240,8 +240,8 @@ def s04():
       <div class="card-b">Steepest structural decline. Romania FX dropped 61%. Review by currency pair and plan tier. <strong>Recoverable: <span class="hl">\u00a3170K to \u00a3340K</span></strong></div>
     </div>
     <div class="card red">
-      <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--red)')} Bank payment fees: down \u00a3126K/month</div>
-      <div class="card-b">Initiative 5 made first 2 HUF/RON transfers free for Premium. Romania fell \u00a316K/mo. <strong>Recoverable: <span class="hl">\u00a390K to \u00a3180K</span></strong></div>
+      <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--red)')} Bank payment fees: down \u00a398K (May to Jul)</div>
+      <div class="card-b">Transfer fees fell \u00a3292K to \u00a3166K/month. Initiative 5 made first 2 HUF/RON transfers free for Premium. UK (\u2212\u00a337K) and Romania (\u2212\u00a316K) led the decline. <strong>Recoverable: <span class="hl">\u00a390K to \u00a3180K</span></strong></div>
     </div>
     <div class="card gray">
       <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--text3)')} Interest income: down \u00a3373K (limited controllability)</div>
@@ -306,8 +306,8 @@ def s06():
       <div class="card-b">3.6x organic growth (\u00a337K to \u00a3132K), zero promotional spend. Expand merchant partnerships.</div>
     </div>
     <div class="card action">
-      <div class="card-h">{ICO_DOLLAR} Subscription upgrades: <span class="hl">+\u00a325 GP/user</span></div>
-      <div class="card-b">107,927 Standard at \u00a318 vs Plus at \u00a343, Ultra at \u00a3232. Converting 1\u20135% adds <span class="hl">\u00a327K\u2013\u00a3135K</span>.</div>
+      <div class="card-h">{ICO_DOLLAR} Subscription upgrades: <span class="hl">+\u00a328 GP/user</span></div>
+      <div class="card-b">111,167 Standard users at \u00a315 vs Plus at \u00a343, Ultra at \u00a3232. Converting 1\u20135% to Plus adds <span class="hl">\u00a331K\u2013\u00a3156K</span>.</div>
     </div>
     <div class="card gray">
       <div class="card-h">{ICO_GLOBE} Stays: \u00a315K first month (too early to size)</div>
@@ -325,20 +325,20 @@ def s07():
 <h1>Four smaller levers add \u00a3215K to \u00a3365K. Business growth closes the gap.</h1>
 <div class="sub">Each requires an operational decision, not new capital.</div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:36px 22px;margin-top:10px;align-content:center;flex:1;">
-  <div class="card action" style="min-height:140px;padding:16px 18px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:18px 22px;margin-top:14px;align-content:center;flex:1;padding-bottom:60px;">
+  <div class="card action" style="padding:16px 18px;">
     <div class="card-h">{ICO_DOLLAR} Credit repricing: <span class="hl">\u00a345K\u2013\u00a370K</span></div>
-    <div class="card-b">Loan rate cuts: Romania <span class="neg">\u2212\u00a313K/mo</span>, Lithuania <span class="neg">\u2212\u00a311K/mo</span>, Germany <span class="neg">\u2212\u00a36K/mo</span> (compounded by Initiative 16). Not all cuts need to persist. Credit Cards and BNPL partially offset.</div>
+    <div class="card-b">Loan declines: Poland <span class="neg">\u2212\u00a320K/mo</span>, Romania <span class="neg">\u2212\u00a313K/mo</span>, Lithuania <span class="neg">\u2212\u00a311K/mo</span>, Ireland <span class="neg">\u2212\u00a310K/mo</span>, Germany <span class="neg">\u2212\u00a36K/mo</span> (Init. 16). Credit Cards and BNPL partially offset.</div>
   </div>
-  <div class="card action" style="min-height:140px;padding:16px 18px;">
+  <div class="card action" style="padding:16px 18px;">
     <div class="card-h">{ICO_DOLLAR} Bank payment pricing: <span class="hl">\u00a390K\u2013\u00a3180K</span></div>
-    <div class="card-b">Transfer fees fell \u00a3292K to \u00a3166K/month. Initiative 5 made first 2 HUF/RON transfers free for Premium; Romania fell <span class="neg">\u00a316K/mo</span>. Pricing review across currencies and plans.</div>
+    <div class="card-b">Transfer fees fell \u00a3292K to \u00a3166K/month. UK (<span class="neg">\u2212\u00a337K</span>) and Romania (<span class="neg">\u2212\u00a316K</span>) led the decline. Init. 5 explains Romania; UK decline warrants separate investigation.</div>
   </div>
-  <div class="card gray" style="min-height:140px;padding:16px 18px;">
+  <div class="card gray" style="padding:16px 18px;">
     <div class="card-h">{ICO_TOOL} SMS and operational: ~\u00a322K per L90D</div>
     <div class="card-b">In-house SMS cut costs <span class="pos">\u221260%</span>. Legal streamlining halved approval time. Faster refunds improve UX. These compound the value of other interventions.</div>
   </div>
-  <div class="card action green" style="min-height:140px;padding:16px 18px;">
+  <div class="card action green" style="padding:16px 18px;">
     <div class="card-h">{ICO_USERS} Business segment: <span class="pos">27x GP/user</span></div>
     <div class="card-b">2,348 business users at <strong>\u00a3913 GP/user</strong> vs 185,894 personal at \u00a334. Growing by 500 users via Scale plan + terminal rollout adds <span class="pos">\u00a3300K\u2013\u00a3600K</span>.</div>
   </div>
@@ -355,13 +355,13 @@ def s07():
 def s08():
     return S(8, f"""
 <div class="tag">Intervention sizing</div>
-<h1>Eight interventions total \u00a31.5M to \u00a32.8M. Growth plays close the gap to \u00a34M.</h1>
+<h1>Eight interventions total \u00a31.5M to \u00a32.9M. Growth plays close the gap to \u00a34M.</h1>
 
 <div class="chart mt" style="margin-bottom:8px;"><img src="{img('sizing.png')}" style="width:100%;"></div>
 
 <div class="bottom-bar gray-bg">
   {ICO_TARGET}
-  <strong style="margin-left:6px;">Closing the gap to \u00a34M:</strong> Execute all eight at the high end (\u00a32.8M), then add business segment growth (+\u00a3300K\u2013\u00a3600K), geographic ARPU optimisation (+\u00a3200K\u2013\u00a3400K), and balance management (+\u00a350K\u2013\u00a3100K). <strong>Full range: \u00a32.1M to \u00a33.9M.</strong>
+  <strong style="margin-left:6px;">Closing the gap to \u00a34M:</strong> Execute all eight at the high end (\u00a32.9M), then add business segment growth (+\u00a3300K\u2013\u00a3600K), geographic ARPU optimisation (+\u00a3200K\u2013\u00a3400K), and balance management (+\u00a350K\u2013\u00a3100K). <strong>Full range: \u00a32.1M to \u00a34.0M.</strong>
 </div>
 """)
 
@@ -418,6 +418,8 @@ def s10():
       \u2022 No range assumes full reversal of any decline<br>
       \u2022 Vending machine: partial restructuring, not wind-down<br>
       \u2022 FX spread: 25\u201350% addressable through pricing<br>
+      \u2022 July decline may include seasonal effects (summer travel patterns)<br>
+      \u2022 2024 cohort generates \u00a314/user vs \u00a349 for pre-2024 cohorts<br>
       \u2022 Current product mix assumed; no regulatory changes beyond Init. 16
     </div>
   </div>

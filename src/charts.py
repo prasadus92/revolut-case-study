@@ -311,7 +311,7 @@ def sizing(df, out_dir: Path):
         ("Complete card vendor\nmigration", 100, 200),
         ("Optimise bank\npayment pricing", 90, 180),
         ("Fix card production\ncosts", 80, 115),
-        ("Subscription upgrade\ncampaign", 50, 135),
+        ("Subscription upgrade\ncampaign", 31, 156),
         ("Selective credit\nrepricing", 45, 70),
     ]
     fig, ax = plt.subplots(figsize=(11, 4.5))
@@ -328,8 +328,10 @@ def sizing(df, out_dir: Path):
                 markersize=8, zorder=4)
         ax.plot([highs[i]], [y[i]], "|", color=TEXT_PRIMARY,
                 markersize=8, zorder=4)
+        lo_str = f"\u00a3{lows[i]}K" if lows[i] < 1000 else f"\u00a3{lows[i] / 1000:.1f}M"
+        hi_str = f"\u00a3{highs[i]}K" if highs[i] < 1000 else f"\u00a3{highs[i] / 1000:.1f}M"
         ax.text(highs[i] + 25, y[i],
-                f"\u00a3{lows[i] / 1000:.1f}M\u2013\u00a3{highs[i] / 1000:.1f}M",
+                f"{lo_str}\u2013{hi_str}",
                 ha="left", va="center", fontweight="bold",
                 fontsize=10, color=TEXT_PRIMARY)
 
