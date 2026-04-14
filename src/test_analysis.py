@@ -495,12 +495,12 @@ class TestSizing:
     LEVERS = [
         ("Restructure vending machine campaign", 800, 1300),
         ("Launch eSIM travel campaign", 190, 500),
-        ("Reprice FX spread by tier", 170, 340),
+        ("Review FX spread pricing", 170, 340),
         ("Migrate to new card vendor", 100, 200),
         ("Reprice bank payments", 90, 180),
         ("Renegotiate card production contract", 80, 115),
         ("Launch Standard-Plus upgrade campaign", 31, 156),
-        ("Reprice credit in PL & LT", 45, 70),
+        ("Test credit repricing in PL & LT", 45, 70),
     ]
 
     def test_low_end_is_1_5M(self):
@@ -529,7 +529,7 @@ class TestSizing:
         """
         # Pull from the canonical LEVERS in this class
         lever_map = {name: (low, high) for name, low, high in self.LEVERS}
-        credit_low, credit_high = lever_map["Reprice credit in PL & LT"]
+        credit_low, credit_high = lever_map["Test credit repricing in PL & LT"]
         bp_low, bp_high = lever_map["Reprice bank payments"]
         sms_low = sms_high = 22
         low_sum = credit_low + bp_low + sms_low

@@ -334,12 +334,12 @@ def sizing(df, out_dir: Path):
     levers = [
         ("Restructure vending\nmachine campaign", 800, 1300),
         ("Launch eSIM\ntravel campaign", 190, 500),
-        ("Reprice FX spread\nby tier", 170, 340),
+        ("Review FX spread\npricing", 170, 340),
         ("Migrate to new\ncard vendor", 100, 200),
         ("Reprice bank\npayments", 90, 180),
         ("Renegotiate card\nproduction contract", 80, 115),
         ("Launch Standard-Plus\nupgrade campaign", 31, 156),
-        ("Reprice credit\nin PL & LT", 45, 70),
+        ("Test credit repricing\nin PL & LT", 45, 70),
     ]
     fig, ax = plt.subplots(figsize=(11, 4.5))
     y = np.arange(len(levers))

@@ -8,25 +8,25 @@ Analysis of 196,187 user-level P&L records to assess whether recent initiatives 
 
 2. **Daily run rate is actually improving +15%** from May to July (+£13K/day, equivalent to +£390K/month). Raw monthly totals would show a false "£403K decline" because July has 8 fewer days than May. On an apples-to-apples daily basis, GP is trajectory-positive.
 
-3. **The vending machine campaign is the largest controllable cost lever.** Initiative 6 cost £2.8M across the 91-day window. Non-activated users drove 76% of that cost. Excluding rewards, they generate £115 GP/user vs £57 from activated users — the reward structure creates the loss, not the users.
+3. **The vending machine campaign is the largest controllable cost lever.** Initiative 6 cost £2.8M across the 91-day window. Non-activated users drove 76% of that cost. Excluding rewards, they generate £115 GP/user vs £57 from activated users. The reward structure creates the loss, not the users.
 
 4. **Four growth categories are adding ~£740K/month of run rate**: Lifestyle (+£9.1K/day, driven by eSIMs and RevPoints), Card Payments (+£9.1K/day, driven by Interchange fees), Subscriptions (+£4.1K/day), and Savings (+£2.3K/day).
 
 5. **Three structural declines are taking ~£290K/month of run rate away**: FX (−£5.2K/day, mainly spread), Interest Income (−£2.6K/day, concentrated in Other Financial Assets), and Bank Payments (−£1.8K/day, led by UK and Romania).
 
-6. **Card production costs are the clearest hurting initiative** — up 39% monthly total, +87% on a daily run rate basis (£3.2K → £6.0K/day). Initiative 9 added ~£83K/month of extra cost.
+6. **Card production costs are the clearest hurting initiative**, up 39% monthly total, +87% on a daily run rate basis (£3.2K → £6.0K/day). Initiative 9 added ~£83K/month of extra cost.
 
 7. **Eight interventions total £1.5M to £2.9M.** Supplementary plays (business growth, geographic ARPU, balance management) close the gap to £4M.
 
 ## Methodology
 
 - Dataset represents the L90D window provided by Revolut (Apr 24 – Jul 23 2024; 91 days inclusive), extracted on Jul 23
-- April has 7 days and July has 23 days of data — both partial ends of the window
+- April has 7 days and July has 23 days of data, both partial ends of the window
 - Month-over-month comparisons use **daily run rates** (total GP ÷ days in month) to correct for July being 8 days shorter than May
 - Segment economics (plan ARPU, country ARPU, user type) use the full 91-day dataset
 - L90D totals use all 91 days; £8.34M is the correct total (the £7.67M figure that appears in some cells of earlier drafts excluded April's 7 days)
 - 17 initiatives mapped to P&L categories; 11 show measurable impact
-- Intervention sizing uses conservative-to-moderate ranges from observed data — no range assumes full reversal of any decline
+- Intervention sizing uses conservative-to-moderate ranges from observed data, no range assumes full reversal of any decline
 
 ## Repository structure
 
