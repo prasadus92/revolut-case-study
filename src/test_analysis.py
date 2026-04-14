@@ -229,12 +229,13 @@ class TestSlide4RevenuePressure:
         assert 12_700 < may < 13_000
         assert 7_400 < jul < 7_600
 
-    def test_romania_fx_dropped_61pct(self, df):
-        """Slide 4: 'Romania FX dropped 61%' (monthly totals — this is a country-level point)."""
-        ro = df[(df.account_level_2 == "FX") & (df.user_country == "Romania")]
-        ro_m = ro.groupby("pnl_month")["amount_gbp"].sum()
-        pct = (ro_m["2024-07"] - ro_m["2024-05"]) / ro_m["2024-05"] * 100
-        assert -63 < pct < -59, f"Romania FX month-total decline = {pct:.0f}%"
+    def test_romania_fx_spread_daily_decline(self, df):
+        """Slide 4: 'Romania FX Spread fell 66% daily'."""
+        ro = df[(df.account_level_3 == "FX Spread") & (df.user_country == "Romania")]
+        may = ro[ro.pnl_month == "2024-05"]["amount_gbp"].sum() / 31
+        jul = ro[ro.pnl_month == "2024-07"]["amount_gbp"].sum() / 23
+        pct = (jul - may) / may * 100
+        assert -68 < pct < -64, f"Romania FX Spread daily decline = {pct:.0f}%"
 
     def test_bank_payments_daily_decline_25pct(self, df):
         """Slide 4: 'Bank payments £7.2K→£5.4K/day (−25%)'."""
