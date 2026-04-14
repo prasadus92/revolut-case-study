@@ -6,12 +6,12 @@ The analysis follows a standard profitability root cause framework: decompose, a
 
 ### 1. Data window and normalisation
 
-The dataset spans the L90D window provided by Revolut, extracted on Jul 23 2024. The window covers Apr 24 – Jul 23 2024 — 91 days when both endpoints are counted inclusively, which is how the dataset was supplied. This structure means:
+The dataset spans the L90D window provided by Revolut, extracted on Jul 23 2024. The window covers Apr 24 – Jul 23 2024, 91 days when both endpoints are counted inclusively, which is how the dataset was supplied. This structure means:
 
-- **April**: 7 days (24th–30th) — partial start of the window
-- **May**: 31 days — complete
-- **June**: 30 days — complete
-- **July**: 23 days (1st–23rd) — partial end of the window
+- **April**: 7 days (24th–30th), partial start of the window
+- **May**: 31 days, complete
+- **June**: 30 days, complete
+- **July**: 23 days (1st–23rd), partial end of the window
 
 Any month-over-month comparison must correct for the fact that May has 31 days of data while July only has 23. I use **daily run rates** (total GP ÷ days in month) for all month-to-month comparisons throughout the analysis. Raw monthly totals would understate July by 8 days and produce a false "£403K decline" signal when the business is actually running slightly ahead on a daily basis.
 
@@ -59,6 +59,6 @@ High-confidence, high-controllability levers (vending machine restructuring, car
 - 196,187 user-level P&L records across the L90D window provided by Revolut (Apr 24 – Jul 23 2024; 91 days inclusive)
 - 191,412 unique users total; segment economics use the full dataset
 - 2024 cohort users generate £14/user vs £49 for pre-2024 cohorts
-- amount_gbp is denominated in thousands as stated in the documentation — converted to actual pounds in `charts.load_data()`
+- amount_gbp is denominated in thousands as stated in the documentation, converted to actual pounds in `charts.load_data()`
 - All figures derived exclusively from the provided dataset
 - NAP (New Active Person) segments are grouped by per-record status, so GP captures contribution during each phase. 2,324 users transitioned from 'Not Napped' to 'Napped' during the period and contribute to both segments accordingly

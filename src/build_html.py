@@ -180,8 +180,8 @@ def s01():
     <div class="section-label">Three moves that drive ~75% of sized recovery</div>
     <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
       <div class="bullet"><div class="bullet-n">1</div><div class="bullet-t"><strong>Restructure the vending machine campaign.</strong> Largest controllable cost at \u00a32.8M across 91 days; 76% goes to users who never activate. Qualification gate + spend cap recovers <span class="hl">\u00a3800K\u2013\u00a31.3M</span>.</div></div>
-      <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Scale eSIM distribution</strong> with targeted travel-season push. Daily revenue grew 11.5x from May to July on 9 users. Worth <span class="hl">\u00a3190K\u2013\u00a3500K</span> at scale.</div></div>
-      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Recover FX spread pricing</strong> through review by currency pair and plan tier. Daily run rate fell 41% from May to July. Recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
+      <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Launch eSIM travel campaign</strong> targeting business-traveller corridors. Daily revenue grew 11.5x from May to July on 9 users. Worth <span class="hl">\u00a3190K\u2013\u00a3500K</span> at scale.</div></div>
+      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Reprice FX spread</strong> by currency pair and plan tier, starting with Romania. Daily run rate fell 41% from May to July; recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
     </div>
   </div>
 </div>
