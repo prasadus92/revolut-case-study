@@ -84,13 +84,19 @@ def fmt(val, decimals=0):
 # ─────────────────────────────────────────────────────────────────────────
 
 def waterfall(df, out_dir: Path):
-    """GP bridge from May to July by account_level_2."""
+    """Day-normalized GP bridge: May daily rate → Jul daily rate by account_level_2.
+
+    Why daily rates: May has 31 days, June 30, July 23 (dataset extracted Jul 23).
+    Comparing raw monthly totals would understate July by ~26% and produce a
+    false "decline" narrative. Daily rates give an apples-to-apples comparison.
+    """
     may = df[df.pnl_month == "2024-05"]
     jul = df[df.pnl_month == "2024-07"]
-    may_l2 = may.groupby("account_level_2").amount_gbp.sum()
-    jul_l2 = jul.groupby("account_level_2").amount_gbp.sum()
+    may_l2 = may.groupby("account_level_2").amount_gbp.sum() / 31
+    jul_l2 = jul.groupby("account_level_2").amount_gbp.sum() / 23
     changes = (jul_l2 - may_l2).dropna()
-    changes = changes[changes.abs() > 10000].sort_values()
+    # Show categories with daily rate change > £100/day (filters noise)
+    changes = changes[changes.abs() > 100].sort_values()
 
     names = {
         "Interest Income": "Interest\nincome", "FX": "FX\nrevenue",
@@ -99,11 +105,12 @@ def waterfall(df, out_dir: Path):
         "Other": "Campaigns &\nonboarding", "Savings": "Savings",
         "Card Payments": "Card\npayments", "Lifestyle": "Lifestyle",
         "Treasury Services": "Treasury",
+        "Merchant Acquiring": "Merchant\nacquiring",
     }
 
-    may_t = may.amount_gbp.sum()
-    jul_t = jul.amount_gbp.sum()
-    labels = ["May GP"] + [names.get(c, c) for c in changes.index] + ["Jul GP"]
+    may_t = may.amount_gbp.sum() / 31  # May daily rate
+    jul_t = jul.amount_gbp.sum() / 23  # Jul daily rate
+    labels = ["May daily\nrun rate"] + [names.get(c, c) for c in changes.index] + ["Jul daily\nrun rate"]
     deltas = [may_t] + list(changes.values) + [jul_t]
     n = len(labels)
 
@@ -114,7 +121,7 @@ def waterfall(df, out_dir: Path):
     for i in range(n):
         if i == 0 or i == n - 1:
             ax.bar(x[i], deltas[i], color=C_BLUE, width=0.52, zorder=3)
-            ax.text(x[i], deltas[i] + 30000, fmt(deltas[i]),
+            ax.text(x[i], deltas[i] + 2000, fmt(deltas[i]),
                     ha="center", fontweight="bold", fontsize=11, color=TEXT_PRIMARY)
             if i == 0:
                 running = deltas[i]
@@ -126,12 +133,12 @@ def waterfall(df, out_dir: Path):
                    zorder=3, alpha=0.85)
             sign = "+" if d > 0 else ""
             txt = f"{sign}{fmt(d)}"
-            if abs(d) > 90000:
+            if abs(d) > 3500:
                 ax.text(x[i], bottom + abs(d) / 2, txt, ha="center",
                         va="center", fontweight="bold", fontsize=9,
                         color=WHITE)
             else:
-                y = (bottom + abs(d) + 22000) if d > 0 else (bottom - 22000)
+                y = (bottom + abs(d) + 1500) if d > 0 else (bottom - 1500)
                 va = "bottom" if d > 0 else "top"
                 ax.text(x[i], y, txt, ha="center", va=va,
                         fontweight="bold", fontsize=8,
@@ -143,8 +150,8 @@ def waterfall(df, out_dir: Path):
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=9)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
-    ax.set_ylim(0, may_t * 1.12)
-    ax.set_ylabel("")
+    ax.set_ylim(0, max(may_t, jul_t) * 1.22)
+    ax.set_ylabel("Daily GP (\u00a3/day)", fontsize=10, color=TEXT_SECONDARY)
     fig.savefig(out_dir / "waterfall.png")
     plt.close()
 
@@ -178,8 +185,9 @@ def nap_economics(df, out_dir: Path):
 
 
 def fx_components(df, out_dir: Path):
-    """FX revenue by component, monthly (slide 4)."""
+    """FX revenue by component, day-normalized (£/day). See waterfall() rationale."""
     months = ["2024-05", "2024-06", "2024-07"]
+    days = {"2024-05": 31, "2024-06": 30, "2024-07": 23}
     fx = df[df.account_level_2 == "FX"]
     fx_l3 = fx.groupby(["pnl_month", "account_level_3"]).amount_gbp.sum().unstack().fillna(0)
 
@@ -190,26 +198,27 @@ def fx_components(df, out_dir: Path):
         ("FX Spread", C_BLUE), ("FX Fees", C_BLUE2), ("FX Mark-up", C_BLUE3)
     ]):
         if cat in fx_l3.columns:
-            vals = [fx_l3.loc[m, cat] if m in fx_l3.index else 0 for m in months]
+            vals = [(fx_l3.loc[m, cat] / days[m]) if m in fx_l3.index else 0 for m in months]
             bars = ax.bar(x + i * w, vals, w, label=cat.replace("FX ", ""),
                           color=colour, zorder=3)
             for bar, v in zip(bars, vals):
-                if v > 50000:
-                    ax.text(bar.get_x() + bar.get_width() / 2, v + 8000,
+                if v > 1500:
+                    ax.text(bar.get_x() + bar.get_width() / 2, v + 250,
                             fmt(v), ha="center", fontsize=8, color=TEXT_SECONDARY)
     ax.set_xticks(x + w)
     ax.set_xticklabels(["May", "Jun", "Jul"], fontsize=10)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
     ax.legend(fontsize=9, framealpha=0.95, edgecolor=BORDER,
               loc="upper right", borderpad=0.5)
-    ax.set_ylabel("")
+    ax.set_ylabel("Daily run rate (\u00a3/day)", fontsize=9, color=TEXT_SECONDARY)
     fig.savefig(out_dir / "fx.png")
     plt.close()
 
 
 def card_costs(df, out_dir: Path):
-    """Card payment costs by L3, monthly (slide 5)."""
+    """Card payments components, day-normalized (£/day). See waterfall() rationale."""
     months = ["2024-05", "2024-06", "2024-07"]
+    days = {"2024-05": 31, "2024-06": 30, "2024-07": 23}
     cd = df[df.account_level_2 == "Card Payments"]
     cl3 = cd.groupby(["pnl_month", "account_level_3"]).amount_gbp.sum().unstack().fillna(0)
 
@@ -221,62 +230,65 @@ def card_costs(df, out_dir: Path):
         ("Interchange Fees", C_BLUE), ("POS Charges", C_BLUE2)
     ]):
         if cat in cl3.columns:
-            vals = [cl3.loc[m, cat] if m in cl3.index else 0 for m in months]
+            vals = [(cl3.loc[m, cat] / days[m]) if m in cl3.index else 0 for m in months]
             bars = ax.bar(x + i * w, vals, w, label=cat, color=colour,
                           zorder=3, alpha=0.9)
-            # Add value labels on positive bars only (negative labels overlap)
             for bar, v in zip(bars, vals):
-                if v > 80000:
-                    ax.text(bar.get_x() + bar.get_width() / 2, v + 20000,
+                if v > 2500:
+                    ax.text(bar.get_x() + bar.get_width() / 2, v + 600,
                             fmt(v), ha="center", fontsize=7,
                             color=TEXT_SECONDARY, fontweight="bold")
     ax.set_xticks(x + w * 1.5)
     ax.set_xticklabels(["May", "Jun", "Jul"], fontsize=10)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
     ax.axhline(0, color=TEXT_PRIMARY, lw=0.5)
-    # Legend placed outside chart at top-left, horizontal
     ax.legend(fontsize=8, framealpha=0.95, edgecolor=BORDER,
               loc="upper left", ncol=2, borderpad=0.5,
               bbox_to_anchor=(0.0, 1.15))
-    ax.set_ylabel("")
+    ax.set_ylabel("Daily run rate (\u00a3/day)", fontsize=9, color=TEXT_SECONDARY)
     fig.subplots_adjust(top=0.85)
     fig.savefig(out_dir / "card_costs.png")
     plt.close()
 
 
 def card_production(df, out_dir: Path):
-    """Card production cost trend (slide 5)."""
+    """Card production daily cost (£/day). Day-normalized — see waterfall() rationale."""
     cp = df[df.account_level_4.str.contains("Card Production", case=False, na=False)]
+    days = {"2024-05": 31, "2024-06": 30, "2024-07": 23}
     months = ["2024-05", "2024-06", "2024-07"]
     cpm = cp.groupby("pnl_month").amount_gbp.sum().reindex(months).fillna(0)
+    # Daily absolute cost
+    vals = [abs(cpm[m]) / days[m] for m in months]
 
-    fig, ax = plt.subplots(figsize=(4.5, 3.4))
-    vals = [abs(v) for v in cpm.values]
+    fig, ax = plt.subplots(figsize=(5.0, 3.0))
     bars = ax.bar(["May", "Jun", "Jul"], vals, color=C_RED,
                   width=0.48, zorder=3, alpha=0.85)
     for bar, v in zip(bars, vals):
-        ax.text(bar.get_x() + bar.get_width() / 2, v + 2500, fmt(v),
+        ax.text(bar.get_x() + bar.get_width() / 2, v + max(vals) * 0.04, fmt(v),
                 ha="center", fontsize=11, fontweight="bold", color=TEXT_PRIMARY)
     ax.set_ylim(0, max(vals) * 1.2)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
-    ax.set_ylabel("Monthly cost", fontsize=10, color=TEXT_SECONDARY)
+    ax.set_ylabel("Daily cost (\u00a3/day)", fontsize=10, color=TEXT_SECONDARY)
     fig.savefig(out_dir / "card_prod.png")
     plt.close()
 
 
 def esim_revpoints(df, out_dir: Path):
-    """eSIM and RevPoints growth - both combined AND separate charts."""
+    """eSIM and RevPoints day-normalized growth (£/day). See waterfall() rationale."""
     months = ["2024-05", "2024-06", "2024-07"]
+    days = {"2024-05": 31, "2024-06": 30, "2024-07": 23}
     esim = df[df.account_level_4.str.contains("eSIM|eSim", case=False, na=False)]
-    em = esim.groupby("pnl_month").amount_gbp.sum().reindex(months).fillna(0)
+    em_tot = esim.groupby("pnl_month").amount_gbp.sum().reindex(months).fillna(0)
+    em = [em_tot[m] / days[m] for m in months]
     rp = df[df.account_level_3 == "RevPoints"]
-    rm = rp.groupby("pnl_month").amount_gbp.sum().reindex(months).fillna(0)
+    rm_tot = rp.groupby("pnl_month").amount_gbp.sum().reindex(months).fillna(0)
+    rm = [rm_tot[m] / days[m] for m in months]
 
     # Combined (kept for backward compat)
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(9.5, 4.0))
     for ax, vals, title, colour in [
-        (a1, em.values, "eSIM revenue", C_BLUE),
-        (a2, rm.values, "RevPoints revenue", C_BLUE2),
+        (a1, em, "eSIM daily revenue", C_BLUE),
+        (a2, rm, "RevPoints daily revenue", C_BLUE2),
     ]:
         bars = ax.bar(["May", "Jun", "Jul"], vals, color=colour,
                       width=0.52, zorder=3)
@@ -293,28 +305,26 @@ def esim_revpoints(df, out_dir: Path):
     plt.close()
 
     # Separate eSIM chart (compact for left column in slide 6)
-    fig, ax = plt.subplots(figsize=(3.5, 2.2))
-    vals = em.values
-    bars = ax.bar(["May", "Jun", "Jul"], vals, color=C_BLUE, width=0.52, zorder=3)
-    for bar, v in zip(bars, vals):
-        ax.text(bar.get_x() + bar.get_width() / 2, v + max(vals) * 0.03,
+    fig, ax = plt.subplots(figsize=(3.8, 2.0))
+    bars = ax.bar(["May", "Jun", "Jul"], em, color=C_BLUE, width=0.52, zorder=3)
+    for bar, v in zip(bars, em):
+        ax.text(bar.get_x() + bar.get_width() / 2, v + max(em) * 0.03,
                 fmt(v), ha="center", fontweight="bold", fontsize=12, color=TEXT_PRIMARY)
-    ax.set_title("eSIM revenue", fontsize=13, fontweight="bold", color=TEXT_PRIMARY, pad=8)
+    ax.set_title("eSIM daily revenue", fontsize=13, fontweight="bold", color=TEXT_PRIMARY, pad=8)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
-    ax.set_ylim(0, max(vals) * 1.22)
+    ax.set_ylim(0, max(em) * 1.22)
     fig.savefig(out_dir / "esim.png")
     plt.close()
 
     # Separate RevPoints chart (compact for left column in slide 6)
-    fig, ax = plt.subplots(figsize=(3.5, 2.2))
-    vals = rm.values
-    bars = ax.bar(["May", "Jun", "Jul"], vals, color=C_BLUE2, width=0.52, zorder=3)
-    for bar, v in zip(bars, vals):
-        ax.text(bar.get_x() + bar.get_width() / 2, v + max(vals) * 0.03,
+    fig, ax = plt.subplots(figsize=(3.8, 2.0))
+    bars = ax.bar(["May", "Jun", "Jul"], rm, color=C_BLUE2, width=0.52, zorder=3)
+    for bar, v in zip(bars, rm):
+        ax.text(bar.get_x() + bar.get_width() / 2, v + max(rm) * 0.03,
                 fmt(v), ha="center", fontweight="bold", fontsize=12, color=TEXT_PRIMARY)
-    ax.set_title("RevPoints revenue", fontsize=13, fontweight="bold", color=TEXT_PRIMARY, pad=8)
+    ax.set_title("RevPoints daily revenue", fontsize=13, fontweight="bold", color=TEXT_PRIMARY, pad=8)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: fmt(v)))
-    ax.set_ylim(0, max(vals) * 1.22)
+    ax.set_ylim(0, max(rm) * 1.22)
     fig.savefig(out_dir / "revpoints.png")
     plt.close()
 
