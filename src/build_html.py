@@ -166,12 +166,12 @@ def s01():
     return S(1, f"""
 <div class="tag">Executive summary</div>
 <h1>GP L90D is \u00a38.3M with growth masking structural pressure. Eight interventions capture \u00a31.5M\u2013\u00a32.9M toward the \u00a34M target.</h1>
-<div class="sub">Lifestyle, Card Payments, Subscriptions and Savings drive ~\u00a3740K/month of run-rate growth. FX, Interest Income and Bank Payments drive ~\u00a3290K/month of decline. Net of all categories: <strong>+\u00a3390K/month</strong>. Interventions protect the downside and accelerate the upside.</div>
+<div class="sub">Of 17 recent initiatives, 11 show measurable P&L impact \u2014 <strong>net positive on portfolio</strong>, with card production vendor (#9) as the clearest drag. Lifestyle, Card Payments, Subscriptions and Savings drive ~\u00a3740K/month of run-rate growth; FX, Interest Income and Bank Payments drive ~\u00a3290K/month of decline. Net of all categories: <strong>+\u00a3390K/month</strong>.</div>
 
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;">
   <div class="stats stats-2x2" style="gap:24px;">
-    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">\u00a38.34M</div><div class="stat-label">GP L90D</div><div class="stat-detail">91-day rolling window, Apr 24\u2013Jul 23</div></div>
-    <div class="stat" style="border-top-color:var(--green)"><div class="stat-val" style="color:var(--green)">+\u00a3390K/mo</div><div class="stat-label">Run-rate trajectory</div><div class="stat-detail">Day-normalised May\u2192Jul (+15%)</div></div>
+    <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">\u00a38.34M</div><div class="stat-label">GP L90D</div><div class="stat-detail">L90D window, Apr 24\u2013Jul 23 (91 days inclusive)</div></div>
+    <div class="stat" style="border-top-color:var(--green)"><div class="stat-val" style="color:var(--green)">+\u00a3390K/mo</div><div class="stat-label">Run-rate trajectory</div><div class="stat-detail">Day-normalised, May to July (+15%)</div></div>
     <div class="stat" style="border-top-color:var(--text)"><div class="stat-val">8</div><div class="stat-label">Interventions sized</div><div class="stat-detail">\u00a31.5M to \u00a32.9M from data</div></div>
     <div class="stat" style="border-top-color:var(--blue)"><div class="stat-val" style="color:var(--blue)">\u00a34M</div><div class="stat-label">Target</div><div class="stat-detail">+48% L90D over 6\u201312 months</div></div>
   </div>
@@ -180,18 +180,18 @@ def s01():
     <div class="section-label">Three moves that drive ~75% of sized recovery</div>
     <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
       <div class="bullet"><div class="bullet-n">1</div><div class="bullet-t"><strong>Restructure the vending machine campaign.</strong> Largest controllable cost at \u00a32.8M across 91 days; 76% goes to users who never activate. Qualification gate + spend cap recovers <span class="hl">\u00a3800K\u2013\u00a31.3M</span>.</div></div>
-      <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Scale eSIM distribution</strong> with targeted travel-season push. Daily revenue grew 11.5x May\u2192Jul on 9 users. Worth <span class="hl">\u00a3190K\u2013\u00a3500K</span> at scale.</div></div>
-      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Recover FX spread pricing</strong> through review by currency pair and plan tier. Daily run rate fell 41% May\u2192Jul. Recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
+      <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Scale eSIM distribution</strong> with targeted travel-season push. Daily revenue grew 11.5x from May to July on 9 users. Worth <span class="hl">\u00a3190K\u2013\u00a3500K</span> at scale.</div></div>
+      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Recover FX spread pricing</strong> through review by currency pair and plan tier. Daily run rate fell 41% from May to July. Recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
     </div>
   </div>
 </div>
-""", 'Source: 196,187 user-level P&L records, Apr 24\u2013Jul 23 2024 (91-day rolling L90D). Amounts in \u00a31,000s per documentation. Month comparisons use daily run rates (May 31 days, Jun 30, Jul 23).')
+""", 'Source: 196,187 user-level P&L records, Apr 24\u2013Jul 23 2024 (L90D window provided in the dataset; 91 days inclusive). Amounts in \u00a31,000s per documentation. Month comparisons use daily run rates (May 31 days, Jun 30, Jul 23).')
 
 
 def s02():
     return S(2, f"""
 <div class="tag">Root cause analysis</div>
-<h1>Daily run rate grew +\u00a313K/day (+15%) from May to July, driven by four growth categories offsetting three structural declines</h1>
+<h1>Daily run rate grew +\u00a313K/day (+15%) from May to July, driven by four growth categories offsetting three structural declines.</h1>
 <div class="sub">Growth: Lifestyle (+\u00a39.1K/day), Card Payments (+\u00a39.1K/day), Subscriptions (+\u00a34.1K/day), Savings (+\u00a32.3K/day). Decline: FX (\u2212\u00a35.2K/day), Interest Income (\u2212\u00a32.6K/day), Bank Payments (\u2212\u00a31.8K/day). Net impact at 30-day run rate: +\u00a3390K/month.</div>
 <div class="chart fill mt"><img src="{img('waterfall.png')}" style="width:100%;"></div>
 """, "Daily run rate bridge: May GP\u00f731 days vs Jul GP\u00f723 days. Day-normalised to correct for July\u2019s 23-day window (data extracted Jul 23). Categories with change below \u00a3100/day excluded.")
@@ -214,7 +214,7 @@ def s03():
       <div class="card-h">{ICO_TOOL} Qualification gate + spend cap</div>
       <div class="card-b">
         <strong>1.</strong> Require digital activation before dispatching physical cards.<br>
-        <strong>2.</strong> Cap daily spend at \u00a316K (May and Jul run rate: \u00a332K and \u00a331K/day).<br>
+        <strong>2.</strong> Cap daily spend at \u00a316K (May and July run rate: \u00a332K and \u00a331K/day).<br>
         <strong>3.</strong> Track activation rate by channel to optimise allocation.
       </div>
     </div>
@@ -260,7 +260,7 @@ def s04():
 def s05():
     return S(5, f"""
 <div class="tag">Deep dive: card payments</div>
-<h1>Card payments is a +\u00a3273K/month run-rate growth engine, but card production costs are rising 87% daily</h1>
+<h1>Card payments is a +\u00a3273K/month run-rate growth engine, but card production costs are rising 87% daily.</h1>
 <div class="sub">Two card initiatives with opposite outcomes. Card payments revenue is accelerating (Initiative 8 + volume growth). Card production cost is the clearest hurting initiative in the portfolio.</div>
 
 <div class="row fill mt" style="gap:16px;">
@@ -288,7 +288,7 @@ def s05():
 def s06():
     return S(6, f"""
 <div class="tag">Deep dive: growth engines</div>
-<h1>Lifestyle daily run rate grew 3.5x May\u2192Jul. eSIMs and RevPoints deserve deliberate investment.</h1>
+<h1>Lifestyle daily run rate grew 3.5x from May to July. eSIMs and RevPoints deserve deliberate investment.</h1>
 <div class="sub">Two products grew organically with minimal spend. Scaling them is the highest-ROI growth play.</div>
 
 <div class="row fill mt" style="gap:18px;">
