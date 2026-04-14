@@ -45,7 +45,7 @@ Interventions are classified into three horizons based on two dimensions:
 - **Controllability**: Is the lever within the team's direct operational control, or does it depend on external factors (market rates, competitive dynamics)?
 - **Confidence**: Is the sizing based on a clear, observed trend, or does it require assumptions about user behaviour or market response?
 
-High-confidence, high-controllability levers (vending machine restructuring, card cost migration, FX pricing review) are placed in the first 90-day horizon. Market-dependent levers (credit repricing, geographic expansion) are placed in the 6-12 month horizon.
+High-confidence, high-controllability levers (vending machine restructuring, card vendor renegotiation and migration, FX repricing) are placed in the first 90-day horizon. Market-dependent levers (credit repricing, geographic expansion) are placed in the 6-12 month horizon.
 
 ## Tools
 
