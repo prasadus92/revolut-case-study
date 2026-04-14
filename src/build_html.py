@@ -181,7 +181,7 @@ def s01():
     <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
       <div class="bullet"><div class="bullet-n">1</div><div class="bullet-t"><strong>Restructure the vending machine campaign.</strong> Largest controllable cost at \u00a32.8M across 91 days; 76% goes to users who never activate. Qualification gate + spend cap recovers <span class="hl">\u00a3800K\u2013\u00a31.3M</span>.</div></div>
       <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Launch eSIM travel campaign</strong> targeting business-traveller corridors. Daily revenue grew 11.5x from May to July on 9 users. Worth <span class="hl">\u00a3190K\u2013\u00a3500K</span> at scale.</div></div>
-      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Reprice FX spread</strong> by currency pair and plan tier, starting with Romania. Daily run rate fell 41% from May to July; recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
+      <div class="bullet"><div class="bullet-n">3</div><div class="bullet-t"><strong>Review FX spread pricing</strong> by currency pair and plan tier, starting with Romania. Daily run rate fell 41% from May to July; recovering 25\u201350% adds <span class="hl">\u00a3170K\u2013\u00a3340K</span>.</div></div>
     </div>
   </div>
 </div>
@@ -376,7 +376,7 @@ def s09():
   <div class="row" style="gap:14px;width:100%;align-items:stretch;">
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#0B84F6,#0070E0);">Now: 0\u201390 days &nbsp; ~\u00a31.0M <span class="hz-badge">High confidence</span></div><div class="hz-body"><ul>
       <li><strong>Ship qualification gate</strong> for vending machine; cap daily spend at <strong>\u00a316K</strong></li>
-      <li><strong>Reprice FX spread</strong> by currency pair and plan tier, starting with Romania</li>
+      <li><strong>Review FX spread pricing</strong> by currency pair and plan tier, starting with Romania</li>
       <li><strong>Renegotiate card production contract</strong> with a volume-tied fee structure</li>
       <li><strong>Migrate 100%</strong> of new cards onto the new vendor pricing</li>
     </ul></div></div>
@@ -397,7 +397,7 @@ def s09():
 
 <div class="bottom-bar blue-bg">
   {ICO_SHIELD}
-  <strong style="margin-left:6px;">First horizon = decisions you can make in week one, no new headcount, no new budget.</strong> Vending machine restructuring, card vendor renegotiation, and FX repricing are all within direct team control.
+  <strong style="margin-left:6px;">First horizon = decisions you can make in week one, no new headcount, no new budget.</strong> Vending machine restructuring, card vendor renegotiation, and FX pricing review are all within direct team control.
 </div>
 """)
 
