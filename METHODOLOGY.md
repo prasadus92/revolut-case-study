@@ -6,7 +6,7 @@ The analysis follows a standard profitability root cause framework: decompose, a
 
 ### 1. Data window and normalisation
 
-The dataset spans a 91-day rolling L90D window (Apr 24 – Jul 23 2024), extracted on Jul 23 2024. This structure means:
+The dataset spans the L90D window provided by Revolut, extracted on Jul 23 2024. The window covers Apr 24 – Jul 23 2024 — 91 days when both endpoints are counted inclusively, which is how the dataset was supplied. This structure means:
 
 - **April**: 7 days (24th–30th) — partial start of the window
 - **May**: 31 days — complete
@@ -56,7 +56,7 @@ High-confidence, high-controllability levers (vending machine restructuring, car
 
 ## Data notes
 
-- 196,187 user-level P&L records across a 91-day L90D window (Apr 24 – Jul 23 2024)
+- 196,187 user-level P&L records across the L90D window provided by Revolut (Apr 24 – Jul 23 2024; 91 days inclusive)
 - 191,412 unique users total; segment economics use the full dataset
 - 2024 cohort users generate £14/user vs £49 for pre-2024 cohorts
 - amount_gbp is denominated in thousands as stated in the documentation — converted to actual pounds in `charts.load_data()`

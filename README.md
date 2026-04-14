@@ -4,9 +4,9 @@ Analysis of 196,187 user-level P&L records to assess whether recent initiatives 
 
 ## Key findings
 
-1. **GP L90D is £8.34M across a 91-day rolling window** (Apr 24 – Jul 23 2024). April has 7 days and July has 23 days of data; May and June are complete. Month-over-month comparisons use daily run rates to correct for the partial end-months.
+1. **GP L90D is £8.34M across the L90D window provided** (Apr 24 – Jul 23 2024, 91 days inclusive). April has 7 days and July has 23 days of data; May and June are complete. Month-over-month comparisons use daily run rates to correct for the partial end-months.
 
-2. **Daily run rate is actually improving +15%** May→Jul (+£13K/day, equivalent to +£390K/month). Raw monthly totals would show a false "£403K decline" because July has 8 fewer days than May. On an apples-to-apples daily basis, GP is trajectory-positive.
+2. **Daily run rate is actually improving +15%** from May to July (+£13K/day, equivalent to +£390K/month). Raw monthly totals would show a false "£403K decline" because July has 8 fewer days than May. On an apples-to-apples daily basis, GP is trajectory-positive.
 
 3. **The vending machine campaign is the largest controllable cost lever.** Initiative 6 cost £2.8M across the 91-day window. Non-activated users drove 76% of that cost. Excluding rewards, they generate £115 GP/user vs £57 from activated users — the reward structure creates the loss, not the users.
 
@@ -20,8 +20,8 @@ Analysis of 196,187 user-level P&L records to assess whether recent initiatives 
 
 ## Methodology
 
-- Dataset represents the 91-day rolling L90D window (Apr 24 – Jul 23 2024), extracted on Jul 23
-- April has 7 days and July has 23 days of data — both partial ends of the rolling window
+- Dataset represents the L90D window provided by Revolut (Apr 24 – Jul 23 2024; 91 days inclusive), extracted on Jul 23
+- April has 7 days and July has 23 days of data — both partial ends of the window
 - Month-over-month comparisons use **daily run rates** (total GP ÷ days in month) to correct for July being 8 days shorter than May
 - Segment economics (plan ARPU, country ARPU, user type) use the full 91-day dataset
 - L90D totals use all 91 days; £8.34M is the correct total (the £7.67M figure that appears in some cells of earlier drafts excluded April's 7 days)
