@@ -387,10 +387,10 @@ def s09():
       <li><strong>Reprice bank payments</strong> in UK and high-volume currencies</li>
     </ul></div></div>
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#1E3A5F,#162D4A);">6\u201312 months &nbsp; ~\u00a32.0M <span class="hz-badge">Market-dependent</span></div><div class="hz-body"><ul>
-      <li><strong>Reprice credit</strong> in PL and LT after a small-scale elasticity test</li>
-      <li><strong>Acquire 500 business customers</strong> via Scale plan and POS terminal rollout</li>
-      <li><strong>Localise pricing</strong> in top 3 EU markets to close the UK\u2013EU ARPU gap</li>
-      <li><strong>Rebalance treasury</strong> toward Cash at Banks where yields are stable</li>
+      <li><strong>Diagnose loan decline</strong> in PL and LT; test selective repricing if pricing-driven</li>
+      <li><strong>Grow business segment</strong> via Scale plan and POS terminal rollout</li>
+      <li><strong>Pilot localised pricing</strong> in top EU markets to narrow the UK\u2013EU ARPU gap</li>
+      <li><strong>Partner with treasury</strong> on rebalancing case: OFA \u221234% vs Cash at Banks flat</li>
     </ul></div></div>
   </div>
 </div>
