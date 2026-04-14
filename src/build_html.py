@@ -237,7 +237,7 @@ def s04():
   <div class="col vc" style="flex:1;gap:18px;">
     <div class="card red">
       <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--red)')} FX spread: \u00a312.8K\u2192\u00a37.5K/day (\u221241%)</div>
-      <div class="card-b">Steepest structural decline; FX overall is \u2212\u00a35.2K/day. Romania FX dropped 61%. Review by currency pair and plan tier. <strong>Recoverable: <span class="hl">\u00a3170K to \u00a3340K</span></strong></div>
+      <div class="card-b">Steepest structural decline; FX overall is \u2212\u00a35.2K/day. Romania FX Spread fell 66% daily. Review by currency pair and plan tier. <strong>Recoverable: <span class="hl">\u00a3170K to \u00a3340K</span></strong></div>
     </div>
     <div class="card red">
       <div class="card-h">{ico('<polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>','var(--red)')} Bank payments: \u00a37.2K\u2192\u00a35.4K/day (\u221225%)</div>
