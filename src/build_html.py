@@ -177,7 +177,7 @@ def s01():
   </div>
 
   <div>
-    <div class="section-label">Three moves that drive 60% of recovery</div>
+    <div class="section-label">Three moves that drive ~75% of recovery</div>
     <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
       <div class="bullet"><div class="bullet-n">1</div><div class="bullet-t"><strong>Restructure the vending machine campaign</strong> to eliminate non-activated user waste. Largest cost at \u00a32.6M per L90D. Qualification gate and spend cap recover <span class="hl">\u00a3800K to \u00a31.3M</span>.</div></div>
       <div class="bullet"><div class="bullet-n">2</div><div class="bullet-t"><strong>Scale eSIM distribution</strong> with targeted travel-season push. Revenue grew 8.5x in three months on 9 users. Worth <span class="hl">\u00a3190K to \u00a3500K</span> at scale.</div></div>
@@ -346,7 +346,7 @@ def s07():
 
 <div class="bottom-bar gray-bg">
   {ICO_GLOBE}
-  <strong style="margin-left:6px;">Geographic ARPU gap:</strong> UK <strong>\u00a390</strong>/user vs France \u00a322, Romania \u00a318, Poland \u00a320. Localised pricing could recover <span class="hl">\u00a3200K\u2013\u00a3400K</span> per L90D.
+  <strong style="margin-left:6px;">Geographic ARPU gap:</strong> UK <strong>\u00a390</strong>/user vs France \u00a323, Romania \u00a317, Poland \u00a331. Localised pricing could recover <span class="hl">\u00a3200K\u2013\u00a3400K</span> per L90D.
 </div>
 """, "Initiatives 1, 5, 10, 11, 13, 16, 17 mapped to levers above. "
     + legend('action', 'growth', 'monitor', 'dashed'))
