@@ -39,7 +39,7 @@ Analysis of 196,187 user-level P&L records to assess whether recent initiatives 
 │   ├── charts.py               # Chart generation (matplotlib, 300 DPI) + load_data()
 │   ├── design.py               # Design system (colours, typography, layout)
 │   ├── render_pdf.js           # Puppeteer PDF renderer
-│   └── test_analysis.py        # Data validation tests (93 tests)
+│   └── test_analysis.py        # Data validation tests (94 tests)
 ├── output/
 │   └── revolut_gp_analysis.pdf # Final deliverable (10-slide PDF)
 ├── METHODOLOGY.md              # Analytical framework and approach

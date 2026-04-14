@@ -166,7 +166,7 @@ def s01():
     return S(1, f"""
 <div class="tag">Executive summary</div>
 <h1>GP L90D is \u00a38.3M with growth masking structural pressure. Eight interventions capture \u00a31.5M\u2013\u00a32.9M toward the \u00a34M target.</h1>
-<div class="sub">Of 17 recent initiatives, 11 show measurable P&L impact \u2014 <strong>net positive on portfolio</strong>, with card production vendor (#9) as the clearest drag. Lifestyle, Card Payments, Subscriptions and Savings drive ~\u00a3740K/month of run-rate growth; FX, Interest Income and Bank Payments drive ~\u00a3290K/month of decline. Net of all categories: <strong>+\u00a3390K/month</strong>.</div>
+<div class="sub">Of 17 recent initiatives, 11 show measurable P&L impact: <strong>net positive on portfolio</strong>, with card production vendor (#9) as the clearest drag. Lifestyle, Card Payments, Subscriptions and Savings drive ~\u00a3740K/month of run-rate growth; FX, Interest Income and Bank Payments drive ~\u00a3290K/month of decline. Net of all categories: <strong>+\u00a3390K/month</strong>.</div>
 
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;">
   <div class="stats stats-2x2" style="gap:24px;">
@@ -358,7 +358,7 @@ def s08():
 <h1>Eight interventions total \u00a31.5M to \u00a32.9M. Supplementary plays close the gap to \u00a34M.</h1>
 <div class="sub">Ranges derived from observed daily run rates (no full reversal assumed). Current daily trajectory of +\u00a3390K/month, if sustained, adds headroom; eight interventions plus supplementary plays drive the case toward the \u00a312.3M L90D target.</div>
 
-<div class="chart mt" style="margin-bottom:28px;"><img src="{img('sizing.png')}" style="width:100%;max-height:440px;"></div>
+<div class="chart mt" style="margin-bottom:14px;"><img src="{img('sizing.png')}" style="width:100%;max-height:440px;"></div>
 
 <div class="bottom-bar gray-bg">
   {ICO_TARGET}
