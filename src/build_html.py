@@ -356,7 +356,7 @@ def s08():
     return S(8, f"""
 <div class="tag">Intervention sizing</div>
 <h1>Eight interventions total \u00a31.5M to \u00a32.9M. Supplementary plays close the gap to \u00a34M.</h1>
-<div class="sub">Ranges derived from observed daily run rates (no full reversal assumed). Current trajectory of +\u00a3390K/month provides a floor; interventions accelerate beyond it toward a \u00a312.3M L90D in 12 months.</div>
+<div class="sub">Ranges derived from observed daily run rates (no full reversal assumed). Current daily trajectory of +\u00a3390K/month, if sustained, adds headroom; eight interventions plus supplementary plays drive the case toward the \u00a312.3M L90D target.</div>
 
 <div class="chart mt" style="margin-bottom:28px;"><img src="{img('sizing.png')}" style="width:100%;max-height:440px;"></div>
 
