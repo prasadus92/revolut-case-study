@@ -494,13 +494,13 @@ class TestSlide10Appendix:
 class TestSizing:
     LEVERS = [
         ("Restructure vending machine campaign", 800, 1300),
-        ("Scale eSIM distribution", 190, 500),
-        ("Recover FX spread pricing", 170, 340),
-        ("Complete card vendor migration", 100, 200),
-        ("Optimise bank payment pricing", 90, 180),
-        ("Fix card production costs", 80, 115),
-        ("Subscription upgrade campaign", 31, 156),
-        ("Selective credit repricing", 45, 70),
+        ("Launch eSIM travel campaign", 190, 500),
+        ("Reprice FX spread by tier", 170, 340),
+        ("Migrate to new card vendor", 100, 200),
+        ("Reprice bank payments", 90, 180),
+        ("Renegotiate card production contract", 80, 115),
+        ("Launch Standard-Plus upgrade campaign", 31, 156),
+        ("Reprice credit in PL & LT", 45, 70),
     ]
 
     def test_low_end_is_1_5M(self):
@@ -529,8 +529,8 @@ class TestSizing:
         """
         # Pull from the canonical LEVERS in this class
         lever_map = {name: (low, high) for name, low, high in self.LEVERS}
-        credit_low, credit_high = lever_map["Selective credit repricing"]
-        bp_low, bp_high = lever_map["Optimise bank payment pricing"]
+        credit_low, credit_high = lever_map["Reprice credit in PL & LT"]
+        bp_low, bp_high = lever_map["Reprice bank payments"]
         sms_low = sms_high = 22
         low_sum = credit_low + bp_low + sms_low
         high_sum = credit_high + bp_high + sms_high

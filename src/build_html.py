@@ -375,29 +375,29 @@ def s09():
 <div style="flex:1;display:flex;align-items:center;margin-top:10px;">
   <div class="row" style="gap:14px;width:100%;align-items:stretch;">
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#0B84F6,#0070E0);">Now: 0\u201390 days &nbsp; ~\u00a31.0M <span class="hz-badge">High confidence</span></div><div class="hz-body"><ul>
-      <li>Cap vending machine daily spend at <strong>\u00a316K/day</strong> and introduce qualification gate</li>
-      <li>Run <strong>FX spread pricing review</strong> by currency pair and plan tier</li>
-      <li>Open <strong>commercial review</strong> with card production vendor</li>
-      <li>Complete card vendor <strong>cost migration</strong> across all card types</li>
+      <li><strong>Ship qualification gate</strong> for vending machine; cap daily spend at <strong>\u00a316K</strong></li>
+      <li><strong>Reprice FX spread</strong> by currency pair and plan tier, starting with Romania</li>
+      <li><strong>Renegotiate card production contract</strong> with a volume-tied fee structure</li>
+      <li><strong>Migrate 100%</strong> of new cards onto the new vendor pricing</li>
     </ul></div></div>
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#3B5BDB,#2B4BC9);">3\u20136 months &nbsp; ~\u00a31.0M <span class="hz-badge">Medium confidence</span></div><div class="hz-body"><ul>
-      <li>Scale <strong>eSIM distribution</strong> with travel-season marketing</li>
-      <li>Expand <strong>RevPoints</strong> merchant partnerships</li>
-      <li>Launch <strong>Standard-to-Plus</strong> subscription upgrade campaign</li>
-      <li>Review <strong>bank payment pricing</strong> across currencies</li>
+      <li><strong>Launch eSIM travel-season campaign</strong> in top business-traveller corridors</li>
+      <li><strong>Sign RevPoints partners</strong> in top travel and retail categories</li>
+      <li><strong>Launch Standard\u2192Plus upgrade campaign</strong> targeting high-engagement users</li>
+      <li><strong>Reprice bank payments</strong> in UK and high-volume currencies</li>
     </ul></div></div>
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#1E3A5F,#162D4A);">6\u201312 months &nbsp; ~\u00a32.0M <span class="hz-badge">Market-dependent</span></div><div class="hz-body"><ul>
-      <li>Selective <strong>credit repricing</strong> by market based on elasticity</li>
-      <li>Grow <strong>business segment</strong> via Scale plan and terminal rollout</li>
-      <li><strong>Localised pricing</strong> in top EU markets to close ARPU gap</li>
-      <li><strong>Balance optimisation</strong> in Other Financial Assets to offset interest income mix shift</li>
+      <li><strong>Diagnose loan decline</strong> in PL and LT; test selective repricing if pricing-driven</li>
+      <li><strong>Grow business segment</strong> via Scale plan and POS terminal rollout</li>
+      <li><strong>Pilot localised pricing</strong> in top EU markets to narrow the UK\u2013EU ARPU gap</li>
+      <li><strong>Partner with treasury</strong> on rebalancing case: OFA \u221234% vs Cash at Banks flat</li>
     </ul></div></div>
   </div>
 </div>
 
 <div class="bottom-bar blue-bg">
   {ICO_SHIELD}
-  <strong style="margin-left:6px;">First horizon = operational decisions, no new investment.</strong> Vending machine restructuring, card cost migration, and FX pricing review are all within direct team control. These are the highest-confidence levers.
+  <strong style="margin-left:6px;">First horizon = decisions you can make in week one, no new headcount, no new budget.</strong> Vending machine restructuring, card vendor renegotiation, and FX repricing are all within direct team control.
 </div>
 """)
 
