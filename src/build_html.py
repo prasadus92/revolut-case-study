@@ -166,7 +166,7 @@ def s01():
     return S(1, f"""
 <div class="tag">Executive summary</div>
 <h1>GP L90D is \u00a38.3M with growth masking structural pressure. Eight interventions capture \u00a31.5M\u2013\u00a32.9M toward the \u00a34M target.</h1>
-<div class="sub">Lifestyle, Card Payments, Subscriptions and Savings are adding ~\u00a3740K/month to run rate. FX, Interest Income and Bank Payments are taking ~\u00a3290K/month away. Interventions protect the downside and accelerate the upside.</div>
+<div class="sub">Lifestyle, Card Payments, Subscriptions and Savings drive ~\u00a3740K/month of run-rate growth. FX, Interest Income and Bank Payments drive ~\u00a3290K/month of decline. Net of all categories: <strong>+\u00a3390K/month</strong>. Interventions protect the downside and accelerate the upside.</div>
 
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;">
   <div class="stats stats-2x2" style="gap:24px;">
@@ -229,7 +229,7 @@ def s03():
 def s04():
     return S(4, f"""
 <div class="tag">Deep dive: structural revenue pressure</div>
-<h1>Three revenue lines are losing ~\u00a3300K/month of run rate. FX spread and bank payments are the most actionable.</h1>
+<h1>Three revenue lines are losing ~\u00a3290K/month of run rate. FX spread and bank payments are the most actionable.</h1>
 <div class="sub">Ordered by controllability. All figures are daily run rates (May\u00f731, Jul\u00f723). FX and bank payments respond to pricing review. Interest income is a mix story. Subscriptions are actually recovering.</div>
 
 <div class="row fill mt" style="gap:16px;">
@@ -322,7 +322,7 @@ def s06():
 def s07():
     return S(7, f"""
 <div class="tag">Deep dive: additional levers</div>
-<h1>Four smaller levers add \u00a3237K to \u00a3387K. Business growth closes the gap.</h1>
+<h1>Three operational levers add \u00a3157K to \u00a3272K. Business growth closes the gap.</h1>
 <div class="sub">Each requires an operational decision, not new capital.</div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:18px 22px;margin-top:14px;align-content:center;flex:1;padding-bottom:60px;">
@@ -420,7 +420,7 @@ def s10():
     <div class="section-label" style="margin-top:6px;">Key assumptions</div>
     <div style="font-size:13px;line-height:1.55;color:var(--text2);">
       \u2022 amount_gbp denominated in thousands per documentation<br>
-      \u2022 NAP status = final activation outcome in the 91-day window<br>
+      \u2022 NAP segments grouped by per-record status (captures GP generated during each phase)<br>
       \u2022 Segment economics (plan/country/user type) use full dataset<br>
       \u2022 Sizing uses conservative\u2013moderate ranges from observed trends<br>
       \u2022 No range assumes full reversal of any decline<br>

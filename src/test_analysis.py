@@ -520,20 +520,21 @@ class TestSizing:
         assert 2_050 < low < 2_100
         assert 3_950 < high < 4_000
 
-    def test_slide_7_four_smaller_levers_range(self):
-        """Slide 7 title: 'Four smaller levers add £237K to £387K'.
-        The four = Credit (45-70) + Bank payment (90-180) + SMS (~22) + Card production (80-115).
+    def test_slide_7_three_operational_levers_range(self):
+        """Slide 7 title: 'Three operational levers add £157K to £272K'.
+        The three = Credit (45-70) + Bank payment (90-180) + SMS (~22).
+        Card production sits on slide 5 and is in the sizing chart separately.
+        Business segment is supplementary, named in the title separately.
         """
         # Pull from the canonical LEVERS in this class
         lever_map = {name: (low, high) for name, low, high in self.LEVERS}
         credit_low, credit_high = lever_map["Selective credit repricing"]
         bp_low, bp_high = lever_map["Optimise bank payment pricing"]
-        cp_low, cp_high = lever_map["Fix card production costs"]
         sms_low = sms_high = 22
-        low_sum = credit_low + bp_low + cp_low + sms_low
-        high_sum = credit_high + bp_high + cp_high + sms_high
-        assert low_sum == 237, f"low sum = {low_sum}"
-        assert high_sum == 387, f"high sum = {high_sum}"
+        low_sum = credit_low + bp_low + sms_low
+        high_sum = credit_high + bp_high + sms_high
+        assert low_sum == 157, f"low sum = {low_sum}"
+        assert high_sum == 272, f"high sum = {high_sum}"
 
 
 # ─── Charts ────────────────────────────────────────────────────────────────

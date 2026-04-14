@@ -61,4 +61,4 @@ High-confidence, high-controllability levers (vending machine restructuring, car
 - 2024 cohort users generate £14/user vs £49 for pre-2024 cohorts
 - amount_gbp is denominated in thousands as stated in the documentation — converted to actual pounds in `charts.load_data()`
 - All figures derived exclusively from the provided dataset
-- NAP (New Active Person) status represents the final activation outcome during the 90-day window
+- NAP (New Active Person) segments are grouped by per-record status, so GP captures contribution during each phase. 2,324 users transitioned from 'Not Napped' to 'Napped' during the period and contribute to both segments accordingly
