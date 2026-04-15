@@ -228,7 +228,7 @@ def s03():
 
 def s04():
     return S(4, f"""
-<div class="tag">Deep dive: structural revenue pressure</div>
+<div class="tag">Deep dive: revenue pressure</div>
 <h1>Three revenue lines are losing ~\u00a3290K/month of run rate. FX spread and bank payments are the most actionable.</h1>
 <div class="sub">Ordered by controllability. All figures are daily run rates (May\u00f731, Jul\u00f723). FX and bank payments respond to pricing review. Interest income is a mix story. Subscriptions are actually recovering.</div>
 
@@ -375,7 +375,7 @@ def s09():
 <div style="flex:1;display:flex;align-items:center;margin-top:10px;">
   <div class="row" style="gap:14px;width:100%;align-items:stretch;">
     <div class="hz"><div class="hz-head" style="background:linear-gradient(135deg,#0B84F6,#0070E0);">Now: 0\u201390 days &nbsp; ~\u00a31.0M <span class="hz-badge">High confidence</span></div><div class="hz-body"><ul>
-      <li><strong>Ship qualification gate</strong> for vending machine; cap daily spend at <strong>\u00a316K</strong></li>
+      <li><strong>Ship qualification gate</strong> for vending machine; cap campaign spend at <strong>\u00a316K/day</strong></li>
       <li><strong>Review FX spread pricing</strong> by currency pair and plan tier, starting with Romania</li>
       <li><strong>Renegotiate card production contract</strong> with a volume-tied fee structure</li>
       <li><strong>Migrate 100%</strong> of new cards onto the new vendor pricing</li>
